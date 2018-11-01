@@ -1,4 +1,7 @@
 version: 0.2
+environment_variables:
+    plaintext:
+        S3_BUCKET: "arn:aws:s3:::codepipeline-us-east-1-583843697584"
 
 phases:
   install:
@@ -11,7 +14,8 @@ phases:
     commands:
       - echo Build started on `date`
   post_build:
-    commands :
+    commands:
+      - aws s3 cp dist/pointclub s3://${S3_BUCKET} --recursive
       - echo Build completed on `date`
 artifacts:
     files:
