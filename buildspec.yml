@@ -1,7 +1,7 @@
 version: 0.2
 environment_variables:
     plaintext:
-        S3_BUCKET: "arn:aws:s3:::codepipeline-us-east-1-583843697584"
+        S3_BUCKET: "arn:aws:s3:::awstest.fvmadvisory1.com"
 
 phases:
   install:
